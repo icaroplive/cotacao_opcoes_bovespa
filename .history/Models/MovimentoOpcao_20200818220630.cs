@@ -1,0 +1,17 @@
+using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace carteiraAcoes.Models {
+    public class MovimentoOpcao {
+        [Key]
+        public int MovimentoOpcaoId { get; set; }
+        public int Quantidade { get; set; }
+        public decimal ValorPremio { get; set; }
+        public DateTime? DataVencimento { get; set; }
+        public DateTime DataVenda { get; set; }
+        [ForeignKey ("opcao")]
+        public int OpcaoId { get; set; }
+        public virtual Opcao Opcao { get; set; }
+    }
+}
